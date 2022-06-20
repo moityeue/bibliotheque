@@ -1,0 +1,85 @@
+{% extends 'templateAdmin.twig' %}
+
+{% block documentTitle %}Retours{% endblock %}
+
+{% block page %}Gestion des retours{% endblock %}
+
+{% block content %}
+<section class="content">
+    <section>
+        <h2 class="content-title max-font-size min-font-size">Veuillez entrer le numéro de réservation OU le numéro
+            d’adhérent</h2>
+        <form action="#" method="GET" class="form-search-return">
+            <input type="text" name="search-return" class="input-return font-cells" id="search-return">
+            <input type="submit" value="Rechercher" class="input-return font-cells" id="submit-search-return">
+        </form>
+    </section>
+    <section>
+        <h2 class="content-title max-font-size min-font-size">Emprunts en cours</h2>
+        {% set bookingLength = bking|length %}
+        {# {{ dump(bking) }} #}
+        {% if bookingLength != 0 %}
+        {% for i in 0.. bookingLength - 1 %}
+        <form action="#" method="GET" class="form-return">
+            <table class="table-return">
+                <tbody class="row-hide tbody-full">
+                    <tr class="tr-h">
+                        <th class="table-cells cell-name font-cells cell-hide">{{ bking[i].getBooking_number }}</th>
+                        <th class="table-cells cell-icon font-cells cell-member">{{ bkusr[i].getUser_number() }}</th>
+                        <th class="table-cells cell-title font-cells book-title-return">{{ bks[i].getTitle() }}</th>
+                        <th class="table-cells cell-icon font-cells">{{ bks[i].getIsbn_number() }}</th>
+                        <th class="table-cells cell-icon font-cells align-center">{{ bkcopy[i].getCondition() }}</th>
+                        <th class="table-cells cell-icon font-cells see-more">+</th>
+                    </tr>
+
+                    <tr class="tr-d none">
+                        <td class="table-cells font-cells">Dans les temps :</td>
+                        <td class="table-cells font-cells">OUI : <input type="radio" name="time"></td>
+                        <td class="table-cells font-cells">NON : <input type="radio" name="time"></td>
+                        <td class="table-cells align-center" colspan="3"><input type="submit" value="Valider"
+                            class="font-cells submit-valid-return"></td>
+                    </tr>
+                    <tr class="tr-d none">
+                        <td class="table-cells font-cells">État conforme :</td>
+                        <td class="table-cells font-cells">OUI : <input type="radio" name="state"></td>
+                        <td class="table-cells font-cells">NON : <input type="radio" name="state"></td>
+                        <td class="table-cells align-center" colspan="3"><button class="font-cells close-return">Fermer</button></td>                
+                    </tr>
+                </tbody>
+                <tbody class="tbody-responsive">
+                    <tr>
+                        <th class="cell-responsive table-cells font-cells tr-h">George Washington</th>
+                        <td class="cell-responsive table-cells font-cells tr-d">Dans les temps :</td>
+                    </tr>
+                    <tr>
+                        <th class="cell-responsive table-cells font-cells tr-h" rowspan="2">GW1509</th>
+                        <td class="cell-responsive table-cells font-cells tr-d">OUI : <input type="radio" name="time"></td>
+                    </tr>
+                    <tr>
+                        <td class="cell-responsive table-cells font-cells tr-d">NON : <input type="radio" name="time"></td>
+                    </tr>
+                    <tr>
+                        <th class="cell-responsive table-cells font-cells tr-h book-title-return">Ceci est un titre beaucoup mais beaucoup trop long</th>
+                        <td class="cell-responsive table-cells font-cells tr-d">État conforme :</td>
+                    </tr>
+                    <tr>
+                        <th class="cell-responsive table-cells font-cells tr-h" rowspan="2">9876543210</th>
+                        <td class="cell-responsive table-cells font-cells tr-d">OUI : <input type="radio" name="state"></td>
+                    </tr>
+                    <tr>
+                        <td class="cell-responsive table-cells font-cells tr-d">NON : <input type="radio" name="state"></td>
+                    </tr>
+                    <tr>
+                        <th class="cell-responsive table-cells font-cells tr-h">Usé</th>
+                        <td class="cell-responsive table-cells tr-d"><input type="submit" value="Valider"
+                            class="cell-responsive font-cells align-start submit-valid-return"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        {% endfor %}
+        {% endif %}
+    </section>
+
+</section>
+{% endblock %}

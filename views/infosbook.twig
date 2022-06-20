@@ -1,0 +1,26 @@
+{% extends 'templateUser.twig' %}
+
+{% block documentTitle %}{{ book.getTitle }}{% endblock %}
+
+{% block section1title %}<h1 class="page-title">{{ book.getTitle }}</h1>{% endblock %}
+
+{% block section1content %}
+<section class="flex-start row-limit-size-1400 infos-book-container">
+    <img src="/{{ base }}/views/templates/ressource/bookcover/{{ book.getCover }}" alt="Couverture du livre {{ book.getTitle }}" class="infos-book-cover">
+    <div class="flex-between infos-book">
+        <p class="infos-title">Résumé</p>
+        <p class="infos-description p-infosbook">{{ book.getDescription }}</p>
+        <div class="flex-start"><p class="infos-title">Date de Publication :</p><p class="infos-title">&nbsp;{{ book.getPublication_date }}</p></div>
+        <div class="flex-start"><p class="infos-title">Auteur :</p><p class="infos-title">&nbsp; {{ author.getName_author }}</p></div>
+        <div class="flex-start"><p class="infos-title">Genre :</p><p class="infos-title">&nbsp; {{ category.getName_category }}</p></div>
+        <div class="flex-start"><p class="infos-title">Edition :</p><p class="infos-title">&nbsp;  {{ publisher.getName_publisher }}</p></div>
+        <div class="flex-start"><p class="infos-title">ISBN :</p><p class="infos-title">&nbsp;  {{ book.getIsbn_number }}</p></div>
+        <div class="flex-start"><p class="infos-title">Emplacement* :</p><p class="infos-title">&nbsp; {{ book.getLocation }}</p></div>
+    </div>
+</section>
+<section class="row-limit-size-1400 resa-container">
+    <button class="btn-resa">Réserver ce livre</button>
+    <p class="p-infosbook invite-connexion-infosbook"><a href="/{{ base }}/login">Connectez-vous </a>pour réserver ce livre. Pas encore inscrit ? Rendez-vous à l'accueil de votre bibliothèque</p>
+    <p class="p-infosbook invite-connexion-infosbook">*Le premier chiffre correspond à l’étage, la lettre au rayon, enfin le dernier nombre à la section</p>
+</section>
+{% endblock %}

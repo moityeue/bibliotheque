@@ -1,0 +1,74 @@
+{% extends 'templateAdmin.twig' %}
+
+{% block documentTitle %}Emprunts{% endblock %}
+
+{% block page %}Gestion des emprunts{% endblock %}
+
+{% block content %}
+<section class="content">
+    <section>
+        <h2 class="content-title max-font-size min-font-size">Veuillez entrer le numéro de réservation OU le numéro
+            d’adhérent</h2>
+        <form action="#" method="GET" class="form-search-return">
+            <input type="text" name="search-stock" class="input-return font-cells" id="search-booking">
+            <input type="submit" value="Rechercher" class="input-return font-cells" id="submit-search-booking">
+        </form>
+    </section>
+    <section>
+        <h2 class="content-title max-font-size min-font-size">Résultats</h2>
+        <table class="table">
+            <thead>
+                <tr class="table-row tr-h">
+                    <th class="table-cells cell-name font-cells cell-hide">Prénom Nom</th>
+                    <th class="table-cells font-cells">N°Adhérent</th>
+                    <th class="table-cells font-cells">N° de réservation</th>
+                    <th class="table-cells font-cells">N° ISBN du livre</th>
+                    <th class="table-cells cell-icon font-cells">Date de fin</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set bookingLength = booking|length %}
+                {% if bookingLength > 0 %}
+                    {% for i in 0.. bookingLength - 1 %}
+                        <tr class="table-row tr-d">
+                            <td class="table-cells cell-name font-cells cell-hide">{{ user[i].getFirstname() }} {{ user[i].getLastname() }}</td>
+                            <td class="table-cells font-cells">{{ user[i].getUser_number() }}</td>
+                            <td class="table-cells font-cells">{{ booking[i].getBooking_number() }}</td>
+                            <td class="table-cells font-cells">{{ book[i].getIsbn_number() }}</td>
+                            <td class="table-cells cell-icon font-cells">{{ booking[i].getEnd_day }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <h2 class="content-title max-font-size min-font-size">Retards</h2>
+        <table class="table">
+            <thead>
+                <tr class="table-row tr-h">
+                    <th class="table-cells cell-name font-cells cell-hide">Prénom Nom</th>
+                    <th class="table-cells font-cells">N°Adhérent</th>
+                    <th class="table-cells font-cells">N° de réservation</th>
+                    <th class="table-cells font-cells">N° ISBN du livre</th>
+                    <th class="table-cells cell-icon font-cells">Date de fin</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set bookingLateLength = bookingLate|length %}
+                {% if bookingLateLength > 0 %}
+                    {% for i in 0.. bookingLateLength - 1 %}
+                        <tr class="table-row tr-d">
+                            <td class="table-cells cell-name font-cells cell-hide">{{ userLate[i].getFirstname() }} {{ userLate[i].getLastname() }}</td>
+                            <td class="table-cells font-cells">{{ userLate[i].getUser_number() }}</td>
+                            <td class="table-cells font-cells">{{ bookingLate[i].getBooking_number() }}</td>
+                            <td class="table-cells font-cells">{{ bookLate[i].getIsbn_number() }}</td>
+                            <td class="table-cells cell-icon font-cells">{{ bookingLate[i].getEnd_day }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </section>
+</section>
+{% endblock %}

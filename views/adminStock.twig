@@ -1,0 +1,76 @@
+{% extends 'templateAdmin.twig' %}
+
+{% block documentTitle %}Stockes{% endblock %}
+
+{% block page %}Gestion des stockes{% endblock %}
+
+{% block content %}
+<section class="content">
+    <section class="stock-section">
+        <h2 class="content-title content-title-stock max-font-size min-font-size">Ajouter un livre</h2>
+        <div class="input-return font-cells" id="add-stock"><a href="/{{ base }}/admin/ajouter" id="add-stock-link">Ajouter un livre</a></div>
+    </section>
+    <section class="stock-section">
+        <h2 class="content-title content-title-stock max-font-size min-font-size">rechercher un livre</h2>
+        <h3 class="content-title content-title-stock max-font-size min-font-size" id="h3-stock">Recherche par Titre OU Auteur OU Numéro ISBN</h3>
+        <form action="#" method="GET" class="form-search-stock">
+        <div>
+            <input type="text" name="search" class="input-return font-cells" id="search-stock">
+            <input type="submit" name="submit" value="rechercher" class="input-return font-cells" id="submit-search-stock">
+        </div>
+        <div>
+            <select name="category" id="input-category" class="select-stock font-cells">
+                <option value="" selected disabled hidden>Genre</option>
+                {% set categoriesLength = categories|length %}
+                {% if categoriesLength > 0 %}
+                {% for i in 0.. categoriesLength - 1 %}
+                <option value="{{ categories[i].getId_category() }}">{{ categories[i].getName_category() }}</option>
+                {% endfor %}
+                {% endif %}
+            </select>
+            <select name="century" id="input-century" class="select-stock font-cells">
+                <option value="" selected disabled hidden>Siècle</option>
+                <option value="1700">18ème</option>
+                <option value="1800">19ème</option>
+                <option value="1900">20ème</option>
+                <option value="2000">21ème</option>
+            </select>
+        </div>
+    </form>
+    </section>
+    <section class="stock-section">
+        <section>
+            <h2 class="content-title content-title-stock max-font-size min-font-size">Résultats</h2>
+            <table class="table-stock">
+                <thead>
+                    <tr class="table-row tr-h">
+                        <th class="table-cells font-cells cell-title-stock">Titre</th>
+                        <th class="table-cells font-cells">Auteur</th>
+                        <th class="table-cells font-cells cell-hide-600">N°ISBN</th>
+                        <th class="table-cells font-cells cell-hide">Année</th>
+                        <th class="table-cells font-cells cell-hide">Genre</th>
+                        <th class="table-cells font-cells"></th>
+                        <th class="table-cells font-cells"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set booksLength = books|length %}
+                    {% if booksLength > 0 %}
+                    {% for i in 0.. booksLength - 1 %}
+                    <tr class="table-row tr-d">
+                        <td class="table-cells font-cells title-limit-stock">{{ books[i].getTitle() }}</td>
+                        <td class="table-cells font-cells">{{ booksAuthors[i].getName_author() }}</td>
+                        <td class="table-cells font-cells cell-hide-600">{{ books[i].getIsbn_number() }}</td>
+                        <td class="table-cells font-cells cell-hide">{{ books[i].getPublication_date() }}</td>
+                        <td class="table-cells font-cells cell-hide">{{ booksCategories[i].getName_category() }}</td>
+                        <td class="table-cells"><a class="icon-link-stock" href="/{{ base }}/admin/modifier"><img class="icon-stock" src="/{{ base }}/views/templates/ressource/icon/modify.webp" alt="Icone de modification du livre"></a></td>
+                        <td class="table-cells"><a class="icon-link-stock" href="/{{ base }}/admin/exemplaires"><img class="icon-stock" src="/{{ base }}/views/templates/ressource/icon/documents.webp" alt="Icone d'ajout d'exemplaire"></a></td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </section>
+    </section>
+</section>
+{% endblock %}

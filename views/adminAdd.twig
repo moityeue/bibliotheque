@@ -1,0 +1,72 @@
+{% extends 'templateAdmin.twig' %}
+
+{% block documentTitle %}Ajouter{% endblock %}
+
+{% block page %}Ajout de livre{% endblock %}
+
+{% block content %}
+<section class="content">
+    <h2 class="content-title max-font-size min-font-size">Ajouter un livre</h2>
+    <form action="#" method="POST"  enctype= "multipart/form-data" class="form-edit flex-start">
+        <label for="title" class="label-edit">Titre du livre</label>
+        <input type="text" name="title" class="input-title-edit">
+        <div class="flex-start form-section-container">
+            <div class="flex-start form-section">
+                <label for="author" class="label-edit">Auteur</label>
+                <select name="author" class="input-edit">
+                    <option value="" selected disabled hidden>Choisir</option>
+                    {% set authorsLength = authors|length %}
+                    {% if authorsLength > 0 %}
+                    {% for i in 0.. authorsLength - 1 %}
+                    <option value="{{ authors[i].getId_author() }}">{{ authors[i].getName_author() }}</option>
+                    {% endfor %}
+                    {% endif %}
+                </select>
+                <label for="category" class="label-edit">Genre</label>
+                <select name="category" class="input-edit">
+                    <option value="" selected disabled hidden>Choisir</option>
+                    {% set categoriesLength = categories|length %}
+                    {% if categoriesLength > 0 %}
+                    {% for i in 0.. categoriesLength - 1 %}
+                    <option value="{{ categories[i].getId_category() }}">{{ categories[i].getName_category() }}</option>
+                    {% endfor %}
+                    {% endif %}
+                </select>
+                <label for="release-date" class="label-edit">Date de publication</label>
+                <input type="date" name="release-date" class="input-edit input-date-edit">
+                <label for="isbn" class="label-edit">N°ISBN</label>
+                <input type="number" name="isbn" min="0" class="input-edit">
+            </div>
+            <div class="flex-start form-section">
+                <label for="publisher" class="label-edit">Editeur</label>
+                <select name="publisher" class="input-edit">
+                    <option value="" selected disabled hidden>Choisir</option>
+                    {% set publishersLength = publishers|length %}
+                    {% if publishersLength > 0 %}
+                    {% for i in 0.. publishersLength - 1 %}
+                    <option value="{{ publishers[i].getId_publisher() }}">{{ publishers[i].getName() }}</option>
+                    {% endfor %}
+                    {% endif %}
+                </select>
+                <label for="location" class="label-edit">Lieu de rangement</label>
+                <input type="text" name="location" class="input-edit">
+                <label for="language" class="label-edit">Langue</label>
+                <select name="language" class="input-edit">
+                    <option value="" selected disabled hidden>Choisir</option>
+                    {% set languagesLength = languages|length %}
+                    {% if languagesLength > 0 %}
+                    {% for i in 0.. languagesLength - 1 %}
+                    <option value="{{ languages[i].getId_language() }}">{{ languages[i].getLanguage() }}</option>
+                    {% endfor %}
+                    {% endif %}
+                </select>
+                <label for="cover" class="label-edit">Couverture</label>
+            <input type="file" name="cover" class="input-edit">
+            </div>
+        </div>
+        <label for="resume" class="label-edit">Synopsis</label>
+        <textarea name="resume" class="textarea-edit"></textarea>
+        <input type="submit" value="Ajouter" class="input-edit" id="submit-edit">
+    </form>
+</section>
+{% endblock %}

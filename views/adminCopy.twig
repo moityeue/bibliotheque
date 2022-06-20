@@ -1,0 +1,47 @@
+{% extends 'templateAdmin.twig' %}
+
+{% block documentTitle %}Exemplaire{% endblock %}
+
+{% block page %}Gestion des exemplaires{% endblock %}
+
+{% block content %}
+<section class="content">
+    <h2 class="content-title max-font-size min-font-size">Ajouter un exemplaire</h2>
+    <form action="#" method="GET" class="form-edit flex-start">
+        <p class="label-edit">Livre : {{ base }}</p>
+        <label for="condition" class="label-edit">Etat de l'exemplaire</label>
+        <select name="condition" class="input-edit">
+            <option value="" selected disabled hidden>Choisir</option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
+        <label for="language" class="label-edit">Langue de l'exemplaire</label>
+        <select name="language" class="input-edit">
+            <option value="" selected disabled hidden>Choisir</option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
+        <input type="submit" value="Ajouter" class="input-edit" id="submit-edit">
+    </form>
+    <div>
+        <h2 class="content-title max-font-size min-font-size">Liste des exemplaires existants</h2>
+        <table class="table">
+            {# {% for i in 0..preresaCount %} #}
+            <tr class="table-row tr-d">
+                <td class="table-cells font-cells">Exemplaire n°1</td>
+                <td class="table-cells font-cells">Bon état</td>
+                <td class="table-cells"><a href="#"><img src="/{{ base }}/views/templates/ressource/icon/denied.png" alt="Icone de suppression" class="icon-delete-copy"></a></td>
+            </tr>
+            {# {% endfor %} #}
+        </table>
+    </div>
+</section>
+{% endblock %}

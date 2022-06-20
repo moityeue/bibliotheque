@@ -1,0 +1,83 @@
+{% extends 'templateAdmin.twig' %}
+
+{% block documentTitle %}Modification{% endblock %}
+
+{% block page %}Modification de livre{% endblock %}
+
+{% block content %}
+<section class="content">
+    <h2 class="content-title max-font-size min-font-size">Modifier le livre</h2>
+    <form action="#" method="GET" class="form-edit flex-start">
+        <label for="title" class="label-edit">Titre du livre</label>
+        <input type="text" name="title" class="input-title-edit">
+        <div class="flex-start form-section-container">
+            <div class="flex-start form-section">
+<<<<<<< HEAD
+                <label for="author" class="label-edit">Auteur</label>
+                <select name="author" class="input-edit">
+                    <option value="" selected disabled hidden>Choisir</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+=======
+                <label for="author" type="number" class="label-edit">Auteur</label>
+                <select name="id_author"    class="input-edit">
+            {% for author in modif %}
+                    <option value="id_author" selected disabled hidden>Choisir</option>
+            
+                    <option value="id_author"> {{ author.getId_author() }}</option>
+            {% endfor %}
+>>>>>>> dc1cc6320124ea8e014c55d18e4ac9b08583ee41
+                </select>
+                <label for="category" class="label-edit">Genre</label>
+                <select name="category" class="input-edit">
+                    <option value="" selected disabled hidden>Choisir</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <label for="release-date" class="label-edit">Date de publication</label>
+                <input type="date" name="release-date" class="input-edit input-date-edit">
+                <label for="isbn" class="label-edit">N°ISBN</label>
+                <input type="number" min="0" class="input-edit">
+            </div>
+            <div class="flex-start form-section">
+                <label for="publisher" class="label-edit">Editeur</label>
+                <select name="publisher" class="input-edit">
+                    <option value="" selected disabled hidden>Choisir</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <label for="location" class="label-edit">Lieu de rangement</label>
+                <input type="text" class="input-edit">
+                <label for="language" class="label-edit">Langue</label>
+                <select name="publisher" class="input-edit">
+                    <option value="" selected disabled hidden>Choisir</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <label for="cover" class="label-edit">Couverture</label>
+            <input type="file" name="cover" class="input-edit">
+            </div>
+        </div>
+        <label for="resume" class="label-edit">Synopsis</label>
+        <textarea name="resume" class="textarea-edit"></textarea>
+        <input type="submit" value="Modifier" class="input-edit" id="submit-edit">
+    </form>
+</section>
+{% endblock %}
+

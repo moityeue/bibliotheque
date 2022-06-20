@@ -1,0 +1,77 @@
+{% extends 'templateAdmin.twig' %}
+
+{% block documentTitle %}Réservations{% endblock %}
+
+{% block page %}Gestion des réservations{% endblock %}
+
+{% block content %}
+<section class="content">
+    <section>
+        <h2 class="content-title max-font-size min-font-size">Demandes de réservation</h2>
+        <table class="table">
+            <tr class="table-row tr-h">
+                <th class="table-cells cell-name font-cells cell-hide"></th>
+                <th class="table-cells cell-icon font-cells">N°Adhérent</th>
+                <th class="table-cells cell-title font-cells book-name">Livre à réserver</th>
+                <th class="table-cells cell-icon font-cells">N°ISBN</th>
+                <th class="table-cells cell-icon font-cells validate-deny">Valider</th>
+                <th class="table-cells cell-icon font-cells validate-deny-short">V</th>
+                <th class="table-cells cell-icon font-cells validate-deny">Refuser</th>
+                <th class="table-cells cell-icon font-cells validate-deny-short">R</th>
+            </tr>
+
+            {% set bookingLength = ing|length %}
+            {% if bookingLength != 0 %}
+                {% for i in 0.. bookingLength - 1 %}
+                <tr class="table-row tr-d">
+                    <td class="table-cells font-cells cell-hide">{{ userbk[i].getFirstname() }} {{ userbk[i].getLastname() }}</td>
+                    <td class="table-cells font-cells">{{ userbk[i].getUser_number() }}</td>
+                    <td class="table-cells font-cells book-name">{{ bks[i].getTitle() }}</td>
+                    <td class="table-cells font-cells">{{ bks[i].getIsbn_number() }}</td>
+                    <form action="#" method="GET">
+                        <td class="table-cells ">
+                            <input type="hidden" name="id" value="{{ ing[i].getId_preresa }}">
+                            <input type="hidden" name="value" value="validé">
+                            <input type="image" name="validate" class="icon-resa input-image" src="/{{ base }}/views/templates/ressource/icon/checked.png" alt="Icone de validation">
+                        </td>
+                    </form>
+                    <form action="#" method="get">
+                        <td class="table-cells ">
+                            <input type="hidden" name="id" value="{{ ing[i].getId_preresa }}">
+                            <input type="hidden" name="value" value="refusé">
+                            <input type="image" name="refused" class="icon-resa input-image" src="/{{ base }}/views/templates/ressource/icon/denied.png" alt="Icone de refus">
+                        </td>
+                    </form>
+                </tr>
+                {% endfor %}
+            {% endif %}
+        </table>
+    </section>
+    <section>
+        <h2 class="content-title max-font-size min-font-size">Demandes de réservation archivé</h2>
+        <table class="table">
+            <tr class="table-row tr-h">
+                <th class="table-cells cell-name font-cells cell-hide">Nom Prénom</th>
+                <th class="table-cells cell-icon font-cells">N°Adhérent</th>
+                <th class="table-cells cell-title font-cells book-name">Livre à réserver</th>
+                <th class="table-cells cell-icon font-cells">N°ISBN</th>
+                <th class="table-cells cell-icon font-cells">Statut</th>
+            </tr>
+            
+            {% set bookingLength2 = ing2|length %}
+            {% if bookingLength2 != 0 %}
+                {% for i in 0.. bookingLength2 - 1 %}
+                <tr class="table-row tr-d">
+                    <td class="table-cells font-cells cell-hide">{{ userbk2[i].getFirstname() }} {{ userbk2[i].getLastname() }}</td>
+                    <td class="table-cells font-cells">{{ userbk2[i].getUser_number() }}</td>
+                    <td class="table-cells font-cells book-name">{{ bks2[i].getTitle() }}</td>
+                    <td class="table-cells font-cells">{{ bks2[i].getIsbn_number() }}</td>
+                    <td class="table-cells font-cells">{{ ing2[i].getStatut() }}</td>
+                </tr>
+                {% endfor %}
+            {% endif %}
+        </table>
+    </section>
+    
+</section>
+{% endblock %}

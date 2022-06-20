@@ -1,0 +1,83 @@
+{% extends 'templateUser.twig' %}
+
+{% block documentTitle %}Mon compte{% endblock %}
+
+{% block info %}
+<section class="flex-center bandeau-espace-perso"></p>
+    <p class="welcome-espace-perso page-title">Bienvenue sur votre
+    <h1 class="welcome-espace-perso page-title">&nbsp;espace personnel</h1>
+    <p class="welcome-espace-perso page-title">&nbsp;george</p>
+</section>
+{% endblock %}
+
+{% block section1content %}
+<section class="account-section row-limit-size-1200">
+    <h2 class="account-section-title">Vos emprunts en cours</h2>
+    <table class="account-section-table">
+        <tr class="account-section-title-rows">
+            <th class="account-section-table-cells">N° d'emprunt</th>
+            <th class="account-section-table-cells">N° ISBN du livre</th>
+            <th class="account-section-table-cells">Date de retour</th>
+        </tr>
+        {% set bookingLength = booking|length %}
+        {% for i in 0..2 %}
+        <tr>
+            <td class="account-section-table-cells">{{ booking.getBooking_number }}coucou</td>
+            <td class="account-section-table-cells">{{ book.getIsbn_number }}coucou</td>
+            <td class="account-section-table-cells">{{ booking.getEnd_day }}coucou</td>
+        </tr>
+        {% endfor %}
+    </table>
+</section>
+<section class="account-section row-limit-size-1200">
+    <h2 class="account-section-title">Historique de vos emprunts</h2>
+    <table class="account-section-table">
+        <tr class="account-section-title-rows">
+            <th class="account-section-table-cells">N° d'emprunt</th>
+            <th class="account-section-table-cells">N° ISBN du livre</th>
+            <th class="account-section-table-cells">Statut du retour</th>
+        </tr>
+        {% set bookingLength = booking|length %}
+        {% for i in 0..2 %}
+        <tr>
+            <td class="account-section-table-cells">{{ booking.getBooking_number }}coucou</td>
+            <td class="account-section-table-cells">{{ book.getIsbn_number }}coucou</td>
+            <td class="account-section-table-cells">{{ booking.getEnd_day }}coucou</td>
+        </tr>
+        {% endfor %}
+    </table>
+</section>
+<section class="account-section row-limit-size-1200">
+    <h2 class="account-section-title">Réservation en cours</h2>
+    <table class="account-section-table">
+        <tr class="account-section-title-rows">
+            <th class="account-section-table-cells">N° de réservation</th>
+            <th class="account-section-table-cells">N° ISBN du livre</th>
+            <th class="account-section-table-cells">Expiration de la réservation</th>
+        </tr>
+        {% set bookingLength = booking|length %}
+        {% for i in 0..2 %}
+        <tr>
+            <td class="account-section-table-cells">{{ booking.getBooking_number }}coucou</td>
+            <td class="account-section-table-cells">{{ book.getIsbn_number }}coucou</td>
+            <td class="account-section-table-cells">{{ booking.getEnd_day }}coucou</td>
+        </tr>
+        {% endfor %}
+    </table>
+</section>
+<section class="account-section row-limit-size-1200">
+    <h2 class="account-section-title">Informations du compte - Adhérent N°{{ user.getUser_number }}</h2>
+    <div class="flex-between">
+        <div>
+            <p class="account-section-para">Nom : {{ user.getFirstname }}</p>
+            <p class="account-section-para">Nom : {{ user.getLastname }}</p>
+        </div>
+        <div>
+            <p class="account-section-para">Télephone : {{ user.getPhone_number }}</p>
+            <p class="account-section-para">Email : {{ user.getMail }}</p>
+        </div>
+        <a href="#" class="account-section-para">Modifier mes contacts</a>
+    </div>
+    
+</section>
+{% endblock %}

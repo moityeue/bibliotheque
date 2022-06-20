@@ -1,0 +1,72 @@
+{% extends 'templateAdmin.twig' %}
+
+{% block documentTitle %}Adhérents{% endblock %}
+
+{% block page %}Gestion des adhérents{% endblock %}
+
+{% block content %}
+<section class="content">
+    <section class="stock-section">
+        <h2 class="content-title content-title-stock max-font-size min-font-size">rechercher un adhérent</h2>
+        <h3 class="content-title content-title-stock max-font-size min-font-size" id="h3-stock">Veuillez entrer le
+            numéro d'un adhérent</h3>
+        <form action="#" method="GET">
+            <input type="text" name="search-stock" class="input-return font-cells" id="search-booking">
+            <input type="submit" value="Rechercher" class="input-return font-cells" id="submit-search-booking">
+        </form>
+    </section>
+    <section class="stock-section">
+        <h2 class="content-title content-title-stock max-font-size min-font-size">informations</h2>
+        <div class="flex-start information-section">
+            <div class="info-user">
+                <p class="p-info-user">George</p>
+                <p class="p-info-user">Washington</p>
+                <p class="p-info-user mt-user">123456789</p>
+                <p class="p-info-user mt-user">Blablabla@mail.com</p>
+                <p class="p-info-user">06 06 06 06 06</p>
+            </div>
+            <div class="flex-between historique-user">
+                <p class="p-hist-user">Nombre d'emprunts en cours : 2</p>
+                <p class="p-hist-user">Nombre total d'emprunts : 2</p>
+                <p class="p-hist-user">Nombre de retards : 2</p>
+                <p class="p-hist-user">Nombre de détériorations : 2</p>
+                <p class="p-hist-user">Nombre d'avertissements : 2</p>
+            </div>
+        </div>
+    </section>
+    <section class="stock-section">
+        <h2 class="content-title content-title-stock max-font-size min-font-size">reclamation</h2>
+        <h3 class="content-title content-title-stock max-font-size min-font-size" id="h3-stock">Avertissement</h3>
+        <form action="#" class="flex-between form-reclamation-user">
+            <select name="motif-avertissement" id="motif-avertissement" class="motif-user p-hist-user">
+                <option value="" selected disabled hidden>Motif</option>
+                <option value="">Retards répétés</option>
+                <option value="">Dégradation répétés</option>
+                <option value="">Non respect des règles</option>
+            </select>
+            <input type="date" name="date-incident" class="date-user p-hist-user">
+            <input type="submit" value="Envoyer" class="send-user p-hist-user">
+        </form>
+        <h3 class="content-title content-title-stock max-font-size min-font-size" id="h3-stock">Suspension temporaire
+        </h3>
+        <form action="#" class="flex-between form-reclamation-user">
+            <select name="motif-temp-ban" id="motif-temp-ban" class="motif-user p-hist-user">
+                <option value="" selected disabled hidden>Motif</option>
+                <option value="">Avertissements répétés</option>
+                <option value="">Non respect des règles</option>
+            </select>
+            <input type="date" name="end-date" class="date-user p-hist-user">
+            <input type="submit" value="Envoyer" class="send-user p-hist-user">
+        </form>
+        <h3 class="content-title content-title-stock max-font-size min-font-size" id="h3-stock">Suspension définitf</h3>
+        <form action="#" class="flex-between form-reclamation-user">
+            <select name="motif-ban" id="motif-ban" class="motif-user p-hist-user">
+                <option value="" selected disabled hidden>Motif</option>
+                <option value="">Suspensions temporaires répétés</option>
+                <option value="">Non respect des règles</option>
+            </select>
+            <input type="submit" value="Envoyer" class="send-user p-hist-user">
+        </form>
+    </section>
+</section>
+{% endblock %}

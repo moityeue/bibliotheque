@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" size="16x16" href="/{{ base }}/views/templates/ressource/logo/icone.png">
+    <link rel="stylesheet" href="/{{ base }}/views/templates/css/style-user.css">
+    <title>Bibliothèque de Lyon | {% block documentTitle %}{% endblock %}</title>
+</head>
+
+<body>
+    {% block header %}
+    <header class="header-background">
+        <nav id="nav-user" class="row-limit-size-1600 height-limit-size">
+            <ul class="menu-user">
+                <li class="li-nav-user grow-basis">
+                    <a href="/{{ base }}/" class="lien-li-nav-user  max-font-size min-font-size">Accueil</a>
+                </li>
+                <li class="li-nav-user grow-basis">
+                    <a href="/{{ base }}/suggestions"
+                        class="lien-li-nav-user  max-font-size min-font-size">Suggestions</a>
+                </li>
+                <li class="li-nav-user grow-basis">
+                    <a href="/{{ base }}/" class="">
+                        <img src="/{{ base }}/views/templates/ressource/logo/logo-couleur-police-noir.png"
+                            alt="Logo de la biliothèque de Lyon" class="logo-header-user">
+                    </a>
+                </li>
+                <li class="li-nav-user grow-basis">
+                    <a href="/{{ base }}/evenements"
+                        class="lien-li-nav-user  max-font-size min-font-size">Evenements</a>
+                </li>
+                <li class="li-nav-user grow-basis" id="link-connexion-user">
+                    <img src="/{{ base }}/views/templates/ressource/icon/user_orange.webp" alt="Logo de connexion"
+                        id="logo-connexion-user">
+                    <ul class="sous-menu-user">
+                        <li class="li-sous-menu-user">
+                            <a class="lien-sous-menu-user max-font-size min-font-size"
+                                href="/{{ base }}/login">connexion</a>
+                        </li>
+                        <li class="li-sous-menu-user">
+                            <a class="lien-sous-menu-user max-font-size min-font-size" href="/{{ base }}/compte">mon
+                                compte</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <nav id="nav-burger">
+            <div class="grow-basis">
+                <img src="/{{ base }}/views/templates/ressource/icon/menu_orange.webp" alt="Menu déroulant"
+                    class="icone-burger">
+            </div>
+            <div class="grow-basis">
+                <a href="/{{ base }}/"><img src="/{{ base }}/views/templates/ressource/logo/logo-couleur-police-noir"
+                        alt="Logo de la bibliothèque de Lyon" class="logo-header-user-burger"></a>
+            </div>
+            <div class="grow-basis" id="connexion-burger-container">
+                <img src="/{{ base }}/views/templates/ressource/icon/user_orange.webp" alt="Logo de connexion"
+                    id="logo-connexion-user-burger">
+                <ul class="sous-menu-user-burger">
+                    <li class="li-sous-menu-user-burger">
+                        <a href="" class="lien-sous-menu-user-burger max-font-size min-font-size">connexion</a>
+                    </li>
+                    <li class="li-sous-menu-user-burger">
+                        <a href="" class="lien-sous-menu-user-burger max-font-size min-font-size">compte</a>
+                    </li>
+                </ul>    
+            </div>
+            <ul class="menu-user-burger">
+                <li class="li-menu-user-burger">
+                    <a href="/{{ base }}/" class="lien-li-menu-user-burger" id="first-lien-li-menu-user-burger">Accueil</a>
+                </li>
+                <li class="li-menu-user-burger">
+                    <a href="/{{ base }}/suggestions" class="lien-li-menu-user-burger">Suggestions</a>
+                </li>
+                <li class="li-menu-user-burger">
+                    <a href="/{{ base }}/evenements" class="lien-li-menu-user-burger">Evenements</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    {% endblock %}
+
+    {% block info %}
+    <section class="bandeau-infos">
+        <div class="flex-between row-limit-size-1600 bandeau-container">
+            <div class="bandeau-horaire">
+                <h3 class="bandeau-horaire-title max-font-size min-font-size">horaires</h3>
+                <p class="bandeau-horaire-para max-font-size min-font-size">Du mardi au samedi : 10h-19h</p>
+                <h4 class="bandeau-horaire-title max-font-size min-font-size">vacances scolaires :</h4>
+                <p class="bandeau-horaire-para max-font-size min-font-size">Du lundi au vendredi : 13h-19h</p>
+                <p class="bandeau-horaire-title max-font-size min-font-size">Boîte de retour disponible 24/7</p>
+            </div>
+            <div class="bandeau-img">
+                <img class="bibli-lyon" src="/{{ base }}/views/templates/ressource/img/bibli.webp"
+                    alt="Photographie extérieur de la bibliothèque de Lyon">
+            </div>
+            <div class="bandeau-reseaux">
+                <a href="/{{ base }}/" target="_blank" class="icone-reseaux-lien"><img class="icone-reseaux-bandeau"
+                        src="/{{ base }}/views/templates/ressource/icon/facebook_orange.webp"
+                        alt="Logo de facebook"></a>
+                <a href="/{{ base }}/" target="_blank" class="icone-reseaux-lien"><img class="icone-reseaux-bandeau"
+                        src="/{{ base }}/views/templates/ressource/icon/instagram_orange.webp"
+                        alt="Logo de instagram"></a>
+                <a href="/{{ base }}/" target="_blank" class="icone-reseaux-lien"><img class="icone-reseaux-bandeau"
+                        src="/{{ base }}/views/templates/ressource/icon/twitter_orange.webp" alt="Logo de twitter"></a>
+            </div>
+            <div class="bandeau-contact">
+                <div class="bandeau-adress bandeau-contact-infos">
+                    <img src="/{{ base }}/views/templates/ressource/icon/location_orange.webp" alt="Icone d'adresse"
+                        class="icone-bandeau-contact">
+                    <p class="bandeau-contact-para max-font-size min-font-size">2 Rue Lamartine, 69001 Lyon</p>
+                </div>
+                <div class="bandeau-mail bandeau-contact-infos">
+                    <img src="/{{ base }}/views/templates/ressource/icon/email_orange.webp" alt="Icone d'adresse email"
+                        class="icone-bandeau-contact">
+                    <p class="bandeau-contact-para max-font-size min-font-size">contact@bm-lyon.com</p>
+                </div>
+                <div class="bandeau-phone bandeau-contact-infos">
+                    <img src="/{{ base }}/views/templates/ressource/icon/phone_orange.webp"
+                        alt="Icone de numéro de téléphone" class="icone-bandeau-contact">
+                    <p class="bandeau-contact-para max-font-size min-font-size">04 74 00 00 00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+
+    <section id="content-container">
+
+        {% block section1title %}{% endblock %}
+
+        {% block section1content %}{% endblock %}
+
+        {% block section2title %}{% endblock %}
+
+        {% block section2content %}{% endblock %}
+
+    </section>
+
+    {% block footer %}
+    <footer class="footer-background">
+        <div class="row-limit-size-1600 flex-between">
+            <section class="contact-footer grow-basis">
+                <h3 class="title-contact max-font-size min-font-size">nous contacter</h3>
+                <section class="mail info-contact-footer">
+                    <img src="/{{ base }}/views/templates/ressource/icon/email_blue.webp" alt="Icone adresse email"
+                        class="icone-contact">
+                    <p class="p-contact max-font-size min-font-size">contact@bm-lyon.com</p>
+                </section>
+                <section class="adress info-contact-footer">
+                    <img src="/{{ base }}/views/templates/ressource/icon/location_blue.webp" alt="Icone d'adresse"
+                        class="icone-contact">
+                    <p class="p-contact max-font-size min-font-size">2 Rue Lamartine, 69001 Lyon</p>
+                </section>
+                <section class="phone info-contact-footer">
+                    <img src="/{{ base }}/views/templates/ressource/icon/phone_blue.webp"
+                        alt="Icone de numéro de téléphone" class="icone-contact">
+                    <p class="p-contact max-font-size min-font-size">04 74 00 00 00</p>
+                </section>
+            </section>
+            <section class="logo-reseaux">
+                <img src="/{{ base }}/views/templates/ressource/logo/logo-couleur-police-noir"
+                    alt="Logo de la bibliothèque de Lyon" class="logo-footer-user">
+                <section class="reseaux">
+                    <a href="/{{ base }}/" target="_blank"><img class="icone-reseaux-footer"
+                            src="/{{ base }}/views/templates/ressource/icon/facebook_blue.webp"
+                            alt="Logo de facebook"></a>
+                    <a href="/{{ base }}/" target="_blank"><img class="icone-reseaux-footer"
+                            src="/{{ base }}/views/templates/ressource/icon/instagram_blue.webp"
+                            alt="Logo de instagram"></a>
+                    <a href="/{{ base }}/" target="_blank"><img class="icone-reseaux-footer"
+                            src="/{{ base }}/views/templates/ressource/icon/twitter_blue.webp"
+                            alt="Logo de twitter"></a>
+                </section>
+            </section>
+            <section class="mention grow-basis">
+                <p class="p-mention max-font-size min-font-size">Inscrivez-vous à notre newsletter</p>
+                <p class="p-mention max-font-size min-font-size">Politique de confidentialité</p>
+                <p class="p-mention max-font-size min-font-size">CGV/CGU</p>
+                <p class="p-mention max-font-size min-font-size">FAQ</p>
+                <p class="p-mention max-font-size min-font-size">Accessibilité</p>
+                <p class="p-mention max-font-size min-font-size">Mentions légales</p>
+                <p class="p-mention max-font-size min-font-size">A propos</p>
+            </section>
+        </div>
+        <section class="mention-responsive row-limit-size-1600">
+            <p class="p-mention max-font-size min-font-size">Newsletter</p>
+            <p class="p-mention max-font-size min-font-size">Confidentialité</p>
+            <p class="p-mention max-font-size min-font-size">CGV/CGU</p>
+            <p class="p-mention max-font-size min-font-size">FAQ</p>
+            <p class="p-mention max-font-size min-font-size">Accessibilité</p>
+            <p class="p-mention max-font-size min-font-size">Mentions légales</p>
+            <p class="p-mention max-font-size min-font-size">A propos</p>
+        </section>
+    </footer>
+    {% endblock %}
+
+    {% block js %}{% endblock %}
+    <script id="js-anim" src="/{{ base }}/views/templates/js/anim-homepage.js"></script>
+</body>
+
+</html>

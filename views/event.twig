@@ -1,0 +1,64 @@
+{% extends 'templateUser.twig' %}
+
+{% block documentTitle %}Évènement{% endblock %}
+
+{% block section1title %}<h1 class="page-title">evenement a venir</h1>{% endblock %}
+
+{% block section1content %}
+<section class="event-block flex-between row-limit-size">
+    <div class="event-img-container">
+        <img class="event-img" src="/{{ base }}/views/templates/ressource/img/sans-fin" alt="Affiche de l'évènement">
+    </div>
+    <div class="event grow-basis">
+        <h2 class="event-type max-font-size min-font-size">EXPOSITION - LITTÉRATURE - TOUS PUBLICS</h2>
+        <h3 class="event-name max-font-size min-font-size">Sans fin la fête - Les années pop de l'illustration (1963-1983)</h3>
+        <p class="event-infos max-font-size min-font-size">Du mardi 18 janvier à 10h00 au samedi 25 juin à 18h00 - bibliothèque de la Part-Dieu</p>
+        <p class="event-infos max-font-size min-font-size">Condition d'accès : Entrée libre dans la limite des places disponibles - Gratuit</p>
+        <p class="event-description max-font-size min-font-size">Une exposition pour partir à la découverte des artistes, qui ont révolutionné le
+            monde de l'édition jeunesse.</p>
+    </div>
+</section>
+<section class="event-block flex-between row-limit-size">
+    <div class="event-img-container">
+        <img class="event-img" src="/{{ base }}/views/templates/ressource/img/kid" alt="Illustration d'un enfant qui lit">
+    </div>
+    <div class="event grow-basis">
+        <h2 class="event-type max-font-size min-font-size">ATELIER - CULTURE NUMÉRIQUE - À PARTIR DE 8 ANS</h2>
+        <h3 class="event-name max-font-size min-font-size">Mes mercredis à l’espace numérique</h3>
+        <p class="event-infos max-font-size min-font-size">Du mercredi 19 janvier à 14h00 au mercredi 29 juin à 16h30 - bibliothèque du 4e</p>
+        <p class="event-infos max-font-size min-font-size">Condition d'accès : Entrée libre dans la limite des places disponibles - Gratuit</p>
+        <p class="event-description max-font-size min-font-size">Nous sommes ravis de vous annoncer que les animations « Mes mercredis à l’Espace
+            numérique » peuvent reprendre dans le respect des gestes barrières.</p>
+    </div>
+</section>
+<section class="event-block flex-between row-limit-size">
+    <div class="event-img-container">
+        <img class="event-img" src="/{{ base }}/views/templates/ressource/img/plume"
+            alt="Illustration d'une plume servant à l'écriture">
+    </div>
+    <div class="event grow-basis">
+        <h2 class="event-type max-font-size min-font-size">LITTÉRATURE - ADULTES</h2>
+        <h3 class="event-name max-font-size min-font-size">Un musée, une collection, des bibliothèques et vous : concours d’écriture</h3>
+        <p class="event-infos max-font-size min-font-size">Du mardi 1er mars à 10h00 au samedi 30 avril à 23h59 - Les 15 bibliothèques de Lyon</p>
+        <p class="event-infos max-font-size min-font-size">Condition d'accès : Entrée libre dans la limite des places disponibles - Gratuit</p>
+        <p class="event-description max-font-size min-font-size">Concours d’écriture autour des objets du musée des Confluences, du 1 mars au 30
+            avril 2022. A la manière des auteur-es de Récits d'objets, donnez une nouvelle vie aux objets du musée en
+            les transportant dans votre univers.</p>
+    </div>
+</section>
+<section class="event-block flex-between row-limit-size">
+    <div class="event-img-container">
+        <img class="event-img" src="/{{ base }}/views/templates/ressource/img/night" alt="Illustration d'un paysage de nuit">
+    </div>
+    <div class="event grow-basis">
+        <h2 class="event-type max-font-size min-font-size">POÉSIE PARLÉE - LITTÉRATURE - TOUS PUBLICS</h2>
+        <h3 class="event-name max-font-size min-font-size">Regarder la nuit : invitation à l'écriture</h3>
+        <p class="event-infos max-font-size min-font-size">Du dimanche 27 mars à 02h00 au samedi 14 mai à 20h03 - Les 15 bibliothèques de Lyon et
+            lieux partenaires</p>
+        <p class="event-infos max-font-size min-font-size">Condition d'accès : Entrée libre dans la limite des places disponibles - Gratuit</p>
+        <p class="event-description max-font-size min-font-size">A partir du 27 mars au passage à l’heure d’été (à 2h00) et jusqu’au 14 mai à la
+            tombée de la nuit (20h03), envoyez-nous vos textes en suivant l’invitation de Tania Tchénio à «Regarder la
+            nuit ».</p>
+    </div>
+</section>
+{% endblock %}

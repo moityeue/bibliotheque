@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" size="16x16" type="image/png" href="/{{ base }}/views/templates/ressource/logo/icone.png">
+    <link rel="stylesheet" href="/{{ base }}/views/templates/css/style-admin.css">
+    <title>Bibliothèque de Lyon | {% block documentTitle %}{% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        <div class="flex-between">
+            <div class="flex-between aside-limit-size">
+                <a href="/{{ base }}/" class="lien-header-logo-bibli">
+                    <img class="logo-bibli block-auto"
+                        src="/{{ base }}/views/templates/ressource/logo/logo-couleur-police-noir.png"
+                        alt="Logo de la bibliothèque de Lyon">
+                </a>
+                <a href="/{{ base }}/admin/login" class="lien-header-logo-connexion">
+                    <img class="logo-connexion block-auto" id="logo-co-header"
+                        src="/{{ base }}/views/templates/ressource/icon/user_orange.webp" alt="Logo de connexion">
+                </a>
+            </div>
+            <h1 class="grow-basis" id="page-name">{% block page %}{% endblock %}</h1>
+        </div>
+    </header>
+    <section class="relative">
+        <aside class="aside-limit-size" id="side-bar">
+            <nav class="aside-nav">
+                <ul>
+                    <li class="li-lien-gestion">
+                        <a href="/{{ base }}/admin" class="max-font-size min-font-size lien-gestion">réservations</a>
+                    </li>
+                    <li class="li-lien-gestion">
+                        <a href="/{{ base }}/admin/retours" class="max-font-size min-font-size lien-gestion">retours</a>
+                    </li>
+                    <li class="li-lien-gestion">
+                        <a href="/{{ base }}/admin/emprunts" class="max-font-size min-font-size lien-gestion">emprunts</a>
+                    </li>
+                    <li class="li-lien-gestion">
+                        <a href="/{{ base }}/admin/stockes" class="max-font-size min-font-size lien-gestion">stockes</a>
+                    </li>
+                    <li class="li-lien-gestion">
+                        <a href="/{{ base }}/admin/utilisateurs" class="max-font-size min-font-size lien-gestion">utilisateurs</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        {% block content %}{% endblock %}
+    </section>
+   
+
+    
+
+    {% block js %}{% endblock %}
+    <script src="/{{ base }}/views/templates/js/template-admin.js"></script>
+</body>
+
+</html>

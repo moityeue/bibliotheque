@@ -1,0 +1,154 @@
+/* Reset CSS */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Fin de reset CSS */
+
+/* Import font */
+
+@import '../font/gentium/';
+@import '../font/poppins/';
+
+/* TemplateLogin */
+
+.connexion{
+    width: 80%;
+    max-width: 1000px;
+    height: 40%;
+    max-height: 600px;
+    background-color: #26355E;
+    margin: 0 auto;
+    margin-top: 7%;
+    border-radius: 45px;
+}
+
+.title-connexion{
+    text-transform: uppercase;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #FFF;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.form-connexion{
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.login-connexion, .password-connexion{
+    margin: 20px 0;
+}
+
+.label-connexion{
+   font-family: 'Poppins', Arial, Helvetica, sans-serif;
+   font-size: 2rem;
+   font-weight: 100;
+   text-transform: capitalize;
+   color: #FFF;
+}
+
+.input-connexion{
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: 50px;
+    font-size: 1.8rem;
+    margin-top: 10px;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+.logo-connexion{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+    .title-connexion{
+        font-size: 2rem;
+    }
+
+    .label-connexion, .input-connexion{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .title-connexion{
+        font-size: 1.5rem;
+    }
+
+    .label-connexion, .input-connexion{
+        font-size: 1.2rem;
+    }
+
+    .input-connexion{
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .title-connexion{
+        font-size: 1.2rem;
+        padding-top: 25px;
+    }
+
+    .label-connexion, .input-connexion{
+        font-size: 1rem;
+    }
+
+    .input-connexion{
+        height: 25px;
+    }
+
+    .logo-connexion{
+        padding-bottom: 25px;
+    }
+}

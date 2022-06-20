@@ -1,0 +1,795 @@
+/* Reset CSS */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    color: #3A3A3A;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+td, th{
+    text-align: start;
+    padding-left: 10px;
+}
+
+/* Fin de reset CSS */
+
+/* Import font */
+
+@import '../font/gentium/';
+@import '../font/poppins/';
+
+/* TemplateAdmin */
+
+/* Général */
+
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-start{
+    display: flex;
+    justify-content: start;
+}
+
+.block-auto{
+    display: block;
+    margin: 0 auto;
+}
+
+.grow-basis{
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.aside-limit-size{
+    max-width: 400px;
+    min-width: 150px;
+    width: 25%;
+}
+
+.table{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.table-cells{
+    height: 50px;
+    vertical-align: middle;
+}
+
+.content{
+    width: 75%;
+    float: right;
+}
+
+.content-title{
+    margin: 5vh auto 2vh;
+    width: 90%;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(8px + 1vw);
+    text-transform: uppercase;
+}
+
+select, input{
+    padding: 0;
+    border-radius: 0;
+    border: 1px solid #E14D4D;
+}
+
+input:focus, select:focus{
+    outline: none;
+}
+
+.table-row-show{
+    display: table-row !important;
+}
+
+.none{
+    display: none;
+}
+
+.align-center{
+    text-align: center;
+}
+
+.align-start{
+    text-align: start;
+}
+
+/* Header */
+
+header{
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
+}
+
+#page-name{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(12px + 1.2vw);
+}
+
+.lien-header-logo-bibli{
+    width: 70%;
+}
+
+.lien-header-logo-connexion{
+    width: 30%;
+}
+
+.logo-bibli{
+    width: 100%;
+    max-width: 250px;
+}
+
+.logo-connexion{
+    width: 50%;
+    max-width: 50px;
+    min-width: 15px;
+}
+
+/* Aside */
+
+#side-bar{
+    background-color: #26355E;
+    position: sticky;
+    top: 0;
+    width: 25%;
+    float: left;
+}
+
+.aside-nav{
+    margin: 0 3vw;
+}
+
+.li-lien-gestion{
+    padding-top: 5vh;
+}
+
+.lien-gestion{
+    display: block;
+    height: 6vh;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: calc(8px + .8vw);
+}
+
+.lien-gestion:hover{
+    color: #E14D4D;
+}
+
+/* Réservations */
+
+.tr-h{
+    background-color: #CCCCCC;
+}
+
+.tr-d{
+    background-color: #DDDDDD;
+}
+
+.cell-name{
+    width: 25%;
+}
+
+.cell-icon{
+    width: 11%;
+}
+
+.font-cells{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(6px + .9vw);
+}
+
+.icon-resa{
+    display: block;
+    width: 20px;
+    margin-top: 6px;
+    margin: 0 auto;
+}
+
+.validate-deny-short{
+    display: none;
+}
+
+.input-image{
+    border: none;
+}
+
+/* Retours */
+
+.table-return{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-search-return{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.form-return{
+    width: 90%;
+    margin: 0 auto 3vh;
+}
+
+.input-return{
+    border: 1px solid #E14D4D;
+    background-color: #fff;
+    padding: 0;
+}
+
+#search-return{
+    width: 49%;
+    height: 40px;
+    padding-left: 1%;
+}
+
+#submit-search-return{
+    width: 20%;
+    height: 42px;
+    cursor: pointer;
+}
+
+#submit-search-return:hover{
+    background-color: #E14D4D;
+    color: #f5f5f5;
+}
+
+.see-more{
+    font-size: 2vw;
+    width: 5%;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+}
+
+.submit-valid-return{
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.close-return{
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    padding: 0;
+    cursor: pointer;
+}
+
+.tbody-responsive{
+    display: none;
+    width: 100%;
+}
+
+.cell-responsive{
+    width: 33%;
+}
+
+/* Emprunts */
+
+#search-booking{
+    width: 49%;
+    height: 40px;
+    padding-left: 1%;
+}
+
+#submit-search-booking{
+    width: 20%;
+    height: 42px;
+    cursor: pointer;
+}
+
+#name-booking{
+    width: 20%;
+}
+
+#date-booking{
+    width: 15%;
+}
+
+#relancer{
+    text-transform: capitalize;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Stockes */
+
+#add-stock{
+    width: 50%;
+    max-width: 250px;
+    height: 42px;
+    cursor: pointer;
+}
+
+#add-stock-link{
+    display: block;
+    text-decoration: none;
+    line-height: 42px;
+    text-align: center;
+    width: 100%;
+}
+
+#add-stock:hover{
+    background-color: #E14D4D;
+}
+
+#add-stock:hover #add-stock-link{
+    color: #f5f5f5;
+}
+
+.content-title-stock{
+    margin-left: 0;
+}
+
+#h3-stock{
+    text-transform: none;
+    margin-top: 2vh;
+}
+
+#search-stock{
+    width: 49%;
+    height: 40px;
+    padding-left: 1%;
+}
+
+#submit-search-stock{
+    width: 20%;
+    height: 42px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#submit-search-stock:hover{
+    background-color: #E14D4D;
+    color: #f5f5f5;
+}
+
+.stock-section{
+    margin: auto;
+    width: 90%;
+}
+
+.select-stock{
+    height: 42px;
+    margin-top: 2vh;
+    width: 50%;
+    max-width: 250px;
+    text-align: center;
+}
+
+.table-stock{
+    width: 100%;
+}
+
+.icon-stock{
+    width: 30px;
+}
+
+.icon-link-stock{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.cell-title-stock{
+    width: 20%;
+}
+
+.cell-icon-stock{
+    padding: 0;
+    width: 32px;
+}
+
+/* UserManagement */
+
+.p-info-user{
+    margin-left: 5%;
+    margin-bottom: 1vh;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: calc(6px + .9vw);
+    color: #f5f5f5;
+}
+
+.p-hist-user{
+    margin-left: 5%;
+    margin-bottom: 1vh;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(6px + .9vw);
+}
+
+.mt-user{
+    margin-top: 5vh;
+}
+
+.info-user{
+    width: 40%;
+    padding: 3vh 0;
+    background-color: #E14D4D;
+}
+
+.historique-user{
+    margin-left: 2%;
+    flex-direction: column;
+    width: calc(60% - 5vh);
+}
+
+.motif-user{
+    height: 42px;
+    width: 30%;
+    margin-left: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.date-user{
+    height: 40px;
+    width: 30%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.motif-user:hover{
+    background-color: #E14D4D;
+    color: #f5f5f5;
+}
+
+.send-user{
+    height: 42px;
+    width: 30%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.send-user:hover{
+    background-color: #E14D4D;
+    color: #f5f5f5;
+}
+
+/* Edit */
+
+.form-edit{
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.form-section{
+    flex-direction: column;
+    width: 50%;
+}
+
+.input-edit{
+    width: 75%;
+    height: 40px;
+    margin-bottom: 2vh;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(6px + .9vw);
+    line-height: 40px;
+    text-align: center;
+}
+
+.input-title-edit{
+    height: 40px;
+    margin-bottom: 2vh;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(6px + .9vw);
+    text-align: center;
+}
+
+.textarea-edit{
+    height: 100px;
+    border-radius: 0;
+    border: 1px solid #E14D4D;
+    font-family: 'Gentium Book Basic', 'Times New Roman', Times, serif;
+    font-size: calc(6px + .9vw);
+}
+
+.textarea-edit:focus{
+    outline: none;
+}
+
+.label-edit{
+    width: 50%;
+    margin-bottom: 1vh;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(6px + .9vw);
+}
+
+#submit-edit{
+    width: 20%;
+    background-color: #fff;
+    cursor: pointer;
+    margin-top: 2vh;
+}
+
+#submit-edit:hover{
+    width: 20%;
+    background-color: #E14D4D;
+    color: #f5f5f5;
+}
+
+/* Copy */
+
+.icon-delete-copy{
+    width: 30px;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 1300px) {
+    #page-name{
+        font-size: 27.6px;
+    }
+
+    .max-font-size{
+        font-size: 18.4px;
+    }
+
+    .input-title-edit, .textarea-edit, .input-edit, .label-edit, .p-info-user, .p-hist-user, .font-cells{
+        font-size: 17.7px;
+    }
+
+    .see-more{
+        font-size: 2vw;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .content{
+        max-width: calc(100% - 400px);
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .icon-resa{
+        width: 20px;
+        margin-top: 5px;
+    }
+
+    .cell-member{
+        width: 23%;
+    }  
+    
+    .cell-hide{
+        display: none;
+    }
+
+    .cell-title-stock{
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .min-font-size{
+        font-size: 14.14px;
+    }
+
+    .table-cells{
+        height: 40px;
+    }
+    
+    .input-title-edit, .textarea-edit, .input-edit, .label-edit, .p-info-user, .p-hist-user, .font-cells{
+        font-size: 12.91px;
+    }
+
+    #search-stock, #search-booking, #search-return{
+        height: 30px;
+        width: 70%;
+    }
+    
+    #submit-search-stock, #submit-search-booking, #submit-search-return{
+        height: 32px;
+        width: 27%;
+    }
+
+    .cell-member{
+        width: 30%;
+    }
+
+    .select-stock{
+        height: 32px;
+        width: 100%;
+        max-width: none;
+    }
+
+    .motif-user{
+        height: 32px;
+    }
+    
+    .date-user{
+        height: 30px;
+    }
+    
+    .send-user{
+        height: 32px;
+    }
+
+    .form-section-container{
+        display: block;
+    }
+
+    .form-section{
+        width: 100%;
+    }
+
+    .label-edit{
+        width: 100%;
+    }
+
+    .input-edit{
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    #submit-edit{
+        width: 100%;
+    }
+
+    .icon-delete-copy{
+        width: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content{
+        max-width: calc(100% - 150px);
+    }
+
+    .tbody-full{
+        display: none;
+    }
+
+    .tbody-responsive{
+        display: block;
+    }
+
+    .book-name{
+        display: none;
+    }
+
+    .validate-deny{
+        display: none;
+    }
+
+    .validate-deny-short{
+        display: table-cell;
+        text-align: center;
+    }
+
+    .cell-title-stock{
+        width: 37%;
+    }
+
+    .icon-stock{
+        width: 20px;
+    }
+
+    .cell-hide-600{
+        display: none;
+
+    }
+
+    .information-section{
+        display: block;
+    }
+
+    .info-user{
+        width: 100%;
+        padding: 3vh 0;
+        background-color: #E14D4D;
+    }
+    
+    .historique-user{
+        margin-left: 0;
+        margin-top: 3vh;
+        width: 100%;
+    }
+
+    .p-hist-user{
+        margin-left: 0;
+    }
+
+    .form-reclamation-user{
+        display: block;
+    }
+
+    .motif-user{
+        width: 100%;
+        margin-bottom: 2vh;
+    }
+    
+    .date-user{
+        width: 100%;
+        padding: 0;
+        margin-bottom: 2vh;
+    }
+    
+    .send-user{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #submit-search-stock, #submit-search-booking, #submit-search-return{
+        width: 100%;
+        margin-top: 1vh;
+    }
+
+    #search-stock, #search-booking, #search-return{
+        width: 98.5%;
+    }
+
+    #add-stock{
+        width: 100%;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    #add-stock-link{
+        line-height: 30px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #page-name{
+        font-size: 16.8px;
+    }
+}

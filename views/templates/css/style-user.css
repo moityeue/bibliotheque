@@ -1,0 +1,1090 @@
+/* Reset CSS */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    color: #3A3A3A;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Fin de reset CSS */
+
+/* Import font */
+
+@import '../font/gentium/';
+@import '../font/poppins/';
+@import '../font/bookman/';
+
+/* Animation Homepage */
+
+.anim-container{
+    transition: all 1s;
+    transition-timing-function:  cubic-bezier(0.48, 0.0, 0.52, 1.0);
+    top: 0;
+    display: block;
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url('/php/Library-Lyon/views/templates/ressource/img/bibli-back.jpg');
+    background-size: cover;
+    background-position-x: center;
+}
+
+.logo-anim{
+    display: block;
+    margin: 0 auto;
+    width: 20vw;
+}
+
+.text-anim{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5vw;
+    font-family: 'Bookman Old Style', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: #26355E;
+    text-shadow: -1px 1px 2px #E14D4D ;
+}
+
+/* Général */
+
+.row-limit-size-1600{
+    margin: 0 auto;
+    max-width: 1600px;
+    width: 95%;
+}
+
+.row-limit-size-1400{
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.row-limit-size-1200{
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.height-limit-size{
+    max-height: 128px;
+    min-height: 93px;
+}
+
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-start{
+    display: flex;
+    justify-content: start;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+
+.grow-basis{
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.show{
+    display: block !important;
+}
+
+.none{
+    display: none;
+}
+
+.page-title{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: calc(15px + 1vw);
+    margin: 5vh 0;
+}
+
+select, input{
+    padding: 0;
+    border-radius: 0;
+    border: 1px solid #E14D4D;
+}
+
+input:focus, select:focus{
+    outline: none;
+}
+
+/* templateUser */
+
+/* Header user */
+
+.header-background{
+    background-color: #FFFFFF;
+}
+
+/* Menu user full size */
+
+.menu-user{
+    display: flex;
+    justify-content: space-between;
+}
+
+.li-nav-user{
+    text-align: center;
+}
+
+.lien-li-nav-user{
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(4px + 1vw);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.lien-li-nav-user:hover{
+    color: #E14D4D;
+}
+
+.logo-header-user{
+    max-width: 250px;
+    min-width: 180px;
+    width: 100%;
+}
+
+#logo-connexion-user{
+    width: 25%;
+    max-width: 50px;
+}
+
+#link-connexion-user{
+    cursor: pointer;
+}
+
+.sous-menu-user{
+    display: none;
+    background-color: #FFFFFF;
+    position: absolute;
+}
+
+.li-sous-menu-user{
+    padding: 3vh 0;
+}
+
+.lien-sous-menu-user{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(4px + 1vw);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.li-sous-menu-user:hover > .lien-sous-menu-user{
+    color: #E14D4D;
+}
+
+#link-connexion-user:hover .sous-menu-user{
+    display: block;    
+}
+
+/* Menu user burger */
+
+#nav-burger{
+    display: none;
+}
+
+.menu-user-burger{
+    display: none;
+    position: absolute;
+    top: 93px;
+    width: 100%;
+    height: calc(100vh - 93px);
+    background-color: #26355E;
+    background-image: url(../img/img/livre-vrac.png);
+}
+
+.icone-burger{
+    width: 50px;
+    cursor: pointer;
+}
+
+#logo-connexion-user-burger{
+    width: 35px;
+    float: right;
+}
+
+.logo-header-user-burger{
+    width: 180px;
+}
+
+.li-menu-user-burger{
+    text-align: center;
+    padding-top: 3vh;
+}
+
+#first-lien-li-menu-user-burger{
+    margin-top: 7vh;
+}
+
+.lien-li-menu-user-burger{
+    display: block;
+    height: 7vh;
+    line-height: 7vh;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.lien-li-menu-user-burger:hover{
+    color: #E14D4D;
+}
+
+#logo-connexion-user-burger{
+    cursor: pointer;
+}
+
+.sous-menu-user-burger{
+    display: none;
+    background-color: #FFFFFF;
+    position: absolute;
+}
+
+.li-sous-menu-user-burger{
+    padding: 3vh 0;
+    text-align: center;
+}
+
+.lien-sous-menu-user-burger{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(4px + 1vw);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.li-sous-menu-user-burger:hover > .lien-sous-menu-user-burger{
+    color: #E14D4D;
+}
+
+#connexion-burger-container:hover .sous-menu-user-burger{
+    display: block;    
+}
+
+
+/* Fin header user */
+
+/* Bandeau user */
+
+.bandeau-infos{
+    background-color: #26355E;
+    padding: 15px 0;
+    height: 200px;
+    margin-bottom: 10vh;
+}
+
+/* Horaire */
+
+.bandeau-horaire{
+    color: #FFFFFF;
+    font-weight: 300;
+}
+
+.bandeau-horaire-title{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    font-size: calc(4px + 1vw);
+    color: #F5F5F5;
+}
+
+.bandeau-horaire-para{
+    font-family: 'Gentium Book Basic', 'Times New Roman', Times, serif;
+    margin: 15px 0;
+    font-size: calc(4px + 1vw);
+    color: #F5F5F5;
+}
+
+/* Image */
+
+.bibli-lyon{
+    height: 200px;
+}
+
+/* Reseaux */
+
+.bandeau-reseaux, .bandeau-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bandeau-reseaux > a{
+    height: 50px;
+    width: 50px;
+}
+
+.icone-reseaux-bandeau{
+    max-width: 50px;
+    width: 100%;
+}
+
+.bandeau-reseaux-responsive{
+    display: none;
+}
+
+/* Contact */
+
+.bandeau-adress, .bandeau-mail, .bandeau-phone{
+    display: flex;
+}
+
+.bandeau-contact-para{
+    color:#FFFFFF;
+    font-family: 'Gentium Basic Book', 'Times New Roman', Times, serif;
+    width: 210px;
+    line-height: 50px;
+    font-size: calc(4px + 1vw);
+}
+
+.icone-bandeau-contact{
+    max-width: 50px;
+    width: 100%;
+    margin-right: 15px;
+}
+
+/* Fin du bandeau user */
+
+/* Footer user */
+
+.footer-background{
+    background-color: #E14D4D;
+    margin-top: 10vh;
+}
+
+/* Contact footer */
+
+.contact-footer, .logo-reseaux, .mention{
+    padding: 3% 0;
+}
+
+.icone-contact{
+    width: 10%;
+    max-width: 50px;
+    min-width: 30px;
+}
+
+.title-contact{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(4px + 1vw);
+    text-transform: uppercase;
+    padding-left: 5px;
+}
+
+.info-contact-footer{
+    display: flex;
+    justify-content: left;
+    padding-top: 5%; 
+    width: 100%;
+}
+
+.p-contact{
+    padding-left: 5%;
+    font-size: calc(4px + 1vw);
+    font-family: 'Gentium Book Basic', 'Times New Roman', Times, serif;
+}
+
+
+/* Logo Reseaux */
+
+.logo-reseaux{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo-footer-user{
+    width: 200px;
+}
+
+.reseaux{
+    display: flex;
+    justify-content: space-around;
+}
+
+.icone-reseaux-footer{
+    width: 80%;
+    min-width: 30px;
+    max-width: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Mention */
+
+.mention{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.p-mention{
+    font-size: calc(4px + 1vw);
+    font-family: 'Gentium Book Basic', 'Times New Roman', Times, serif;
+    text-align: end;
+}
+
+.mention-responsive{
+    display: none;
+}
+
+/* Fin footer user */
+
+/* Fin templateUser */
+
+/* Homepage */
+
+.listBooks-container{
+    width: 80%;
+}
+
+.listBooks{
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.link-book{
+    text-decoration: none;
+    color: #000;
+    display: block;
+    width: 25%;
+}
+
+.book{
+    margin: 3vh 2vw;
+}
+
+.book-title{
+    font-size: calc(10px + 1vw);
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    padding-bottom: 1vh;
+}
+
+.book-img{
+    width: 100%;
+    padding-bottom: 1vh;
+}
+
+.book-author{
+    font-size: calc(8.5px + 1vw);
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+#form-home{
+    margin-bottom: 5vh;
+}
+
+.select-container-home{
+    width: 80%;
+}
+
+.select-home{
+    height: 40px;
+    width: calc(33% - 4vw);
+    padding: 0 2vw;
+    font-family: 'Gentium Book Basic','Times New Roman', Times, serif;
+    font-size: calc(10px + 1vw);
+    color: #F5F5F5;
+    background-color: #E14D4D;
+}
+
+.search-container{
+    margin: 0 auto;
+    width: 80%;
+}
+
+#search-home{
+    margin-bottom: 2vh;
+    padding: 0 2vw;
+    height: 38px;
+    width: calc(66.3% - 6vw);
+    font-family: 'Gentium Book Basic','Times New Roman', Times, serif;
+    font-size: calc(10px + 1vw);
+    color: rgb(70, 70, 70);
+}
+
+#submit-home{
+    display: block;
+    height: 40px;
+    width: calc(33% - 4vw);
+    font-family: 'Gentium Book Basic','Times New Roman', Times, serif;
+    font-size: calc(10px + 1vw);
+    background-color: #FFFFFF;
+    text-transform: uppercase;
+    color:#26355E;
+    cursor: pointer;
+}
+
+#submit-home:hover{
+    background-color: #E14D4D;
+    color: #F5F5F5;
+}
+
+/* Infosbook */
+
+.infos-book-container{
+    width: 90%;
+}
+
+.infos-book{
+    flex-direction: column;
+    margin-left: 3.5vw;
+}
+
+.infos-title{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(8.5px + 1vw);
+    text-transform: uppercase;
+}
+
+.infos-description{
+    text-align: justify;
+}
+
+.infos-book-cover{
+    width: 20vw;
+}
+
+.resa-container{
+    width: 90%;
+}
+
+.btn-resa{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    width: 30%;
+    margin: 3vh 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(8.5px + 1vw);
+    background-color: #FFFFFF;
+    color: #3A3A3A;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: #E14D4D 1px solid;
+}
+
+.btn-resa:hover{
+    background-color: #E14D4D;
+    color: #F5F5F5;
+}
+
+.invite-connexion-infosbook{
+    margin: 2vh 0;
+}
+
+.p-infosbook{
+    font-family: 'Gentium Book Basic', 'Times New Roman', Times, serif;
+    font-size: calc(6.5px + 1vw);
+}
+
+/* Event */
+
+.event-block{
+    background-color: rgb(235, 235, 235);
+    margin: 5vh auto;
+    max-width: 1200px;
+}
+
+.event{
+    text-align: center;
+    padding: 0 5%;
+    width: 70%;
+}
+
+.event-img-container{
+    width: 20%;
+}
+
+.event-img{
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+}
+
+.event-type{
+    color: #E14D4D;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(4px + 1vw);
+    text-transform: uppercase;
+    margin-top: 2%;
+}
+
+.event-name{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: calc(4px + 1vw);
+    margin: 10px 0;
+}
+
+.event-infos{
+    color: #214eca;
+    font-family: 'Gentium Book Basic', 'Times New Roman', Times, serif;
+    font-size: calc(4px + 1vw);
+}
+
+.event-description{
+    font-family: 'Gentium Book Basic', 'Times New Roman', Times, serif;
+    font-size: calc(4px + 1vw);
+    margin: 10px 0;
+}
+
+/* Suggestions */
+
+.h1-suggestion{
+    display: block;
+    margin: 5vh auto;
+    width: 80%;
+}
+
+.suggestion-title{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: calc(8.5px + 1vw);
+    text-align: center;
+    padding-bottom: 3vh;
+}
+
+.suggestion-para{
+    font-family: 'Gentium Book Basic', 'Times New Roman', Times, serif;
+    font-size: calc(6.5px + 1vw);
+    text-align: justify;
+    margin-bottom: 5vh;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Espace perso */
+
+.bandeau-espace-perso{
+    height: 100px;
+    background-color: #26355E;
+}
+
+.welcome-espace-perso{
+    color: #F5F5F5;
+    margin: 0;
+    line-height: 100px;
+}
+
+.account-section{
+    width: 80%;
+    margin-top: 5vh;
+}
+
+.account-section-title{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(8.5px + 1vw);
+    margin-bottom: 2vh;
+}
+
+.account-section-table{
+    width: 100%;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(6.5px + 1vw);
+    text-align: center;
+    line-height: 5vh;
+}
+
+.account-section-table-rows{
+    height: 5vh;
+}
+
+.account-section-table-cells{
+    border: #3A3A3A 1px solid;
+    width: 33%;
+}
+
+.account-section-para{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: calc(6.5px + 1vw);
+    margin-bottom: 1vh;
+}
+
+
+/* Media queries */
+
+@media screen and (min-width : 1316px){
+
+    /* Général */
+
+    .max-font-size{
+        font-size: 17.16px;  
+    }
+
+    #submit-home, .select-home, #search-home, .book-title{
+        font-size: 23.16px;
+    }
+
+    .account-section-title, .suggestion-title, .btn-resa, .infos-title, .book-author{
+        font-size: 21.66px;
+    }
+
+    .account-section-para, .account-section-table, .suggestion-para, .p-infosbook{
+        font-size: 19.66px;
+    }
+
+    /* Footer */
+
+    .p-contact{
+        line-height: 50px;
+    }
+
+    .p-mention{
+        margin-left: 50%;
+    }
+
+    .logo-footer-user{
+        width: 280px;
+    }
+
+    .icone-reseaux-footer{
+        width: 50px;
+    }
+
+    /* Infosbook */
+
+    .btn-resa{
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 947px){ 
+
+    /* Bandeau infos */
+
+    .icone-reseaux-bandeau, .icone-bandeau-contact{
+        max-width: 35px;
+    }
+
+    .bandeau-contact-para{
+        width: 170px;
+        line-height: 35px;
+    }
+
+    .bandeau-reseaux > a{
+        height: 35px;
+        width: 35px;
+    }
+
+    .bibli-lyon{
+        height: 150px;
+    }
+
+    .bandeau-infos{
+        height: 150px
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    /* Général */
+
+    .min-font-size{
+        font-size: 11.68px;
+    }
+
+    /* Bandeau infos */
+
+    .icone-reseaux-bandeau, .icone-bandeau-contact{
+        max-width: 20px;
+    }
+
+    .icone-bandeau-contact{
+        margin-right: 7px;
+    }
+
+    .bandeau-contact-para{
+        width: 170px;
+        line-height: 20px;
+    }
+
+    .bandeau-reseaux > a{
+        height: 20px;
+        width: 20px;
+    }
+
+    .bibli-lyon{
+        height: 100px;
+    }
+
+    .bandeau-infos{
+        height: 100px
+    }
+    
+    .bandeau-horaire-para{
+        margin: 10px 0;
+    }
+
+    /* Footer */
+
+    .p-contact{
+        line-height: 30px;
+    }
+
+    .p-mention{
+        margin-left: 21%;
+    }
+
+    .icone-reseaux-footer{
+        width: 30px;
+    }
+
+    .logo-footer-user{
+        width: 150px;
+    }
+
+    /* Event */
+
+    .event-img{
+        width: 80%;
+        max-width: 200px;
+        height: inherit;
+        margin: 10px;
+    }
+
+    /* Homepage */
+
+    .link-book{
+        width: 50%;
+    }
+
+    .book-title{
+        font-size: 17.68px;
+    }
+
+    .account-section-title, .suggestion-title, .infos-title, .book-author{
+        font-size: 16.18px;
+    }
+
+    /* Infosbook */
+
+    .p-infosbook{
+        font-size: 16.18px;
+    }
+
+    .infos-book-container{
+        display: inherit;
+    }
+
+    .infos-book-cover{
+        display: block;
+        margin: 3vh auto;
+    }
+
+    .infos-title{
+        margin: 1vh 0;
+    }
+
+    .infos-book{
+        margin-left: 0;
+    }
+
+    /* Suggestions */
+
+    .account-section-para, .account-section-table, .suggestion-para{
+        font-size: 14.18px;
+    }
+    
+}
+
+@media screen and (max-width: 600px){
+
+    /* Header user */
+
+    #nav-user{
+        display: none;
+    }
+
+    #nav-burger{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Bandeau infos */
+
+    .bandeau-img{
+        display: none;
+    }
+
+    /* Footer */
+
+    .title-contact{
+        padding: 0;
+    }
+
+    .info-contact-footer{
+        display: block;
+    }
+
+    .icone-contact, .icone-reseaux-footer{
+        width: 20px;
+        height: 20px;
+        min-width: inherit;
+    }
+
+    .icone-reseaux-footer{
+        margin-bottom: 50%;
+    }
+
+    .p-contact{
+        padding: 0;
+        line-height: inherit;
+    }
+
+    .mention{
+        display: none;
+    }
+
+    .mention-responsive{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-bottom: 5px;
+    }
+
+    .p-mention{
+        text-align: left;
+        margin-left: 0;
+        padding-right: 10px;
+        padding-bottom: 5px;
+    }
+
+    /* Event */
+
+    .event-img-container{
+        display: none;
+    }
+
+    /* Infosbook */
+
+    .btn-resa{
+        font-size: 14.5px;
+        width: 35%;
+    }
+
+    /* Espace perso */
+
+    .bandeau-espace-perso{
+        height: 50px;
+    }
+
+    .welcome-espace-perso{
+        line-height: 50px;
+        font-size: calc(8px + 1vw);
+    }
+
+    /* Espace perso */
+
+    .account-section{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 490px){
+
+    /* Bandeau */
+
+    .bandeau-infos{
+        height: 215px;
+    }
+
+    .bandeau-container{
+        display: block;
+        width: 180px;
+    }
+
+    .bandeau-reseaux{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        margin: 10px 0;
+    }
+
+    .icone-reseaux-lien{
+        margin-right: 10px;
+    }
+
+    .bandeau-contact-infos{
+        margin-bottom: 10px;
+    }
+
+    /* Homepage */
+
+    .link-book{
+        width: 100%;
+    } 
+
+    #submit-home, #search-home, .select-home{
+        height: 30px;
+    }
+
+    /* Infosbook */
+
+    .btn-resa{
+        width: 50%;
+    }
+
+    /* Espace perso */
+
+    .account-section-para, .account-section-table{
+        font-size: 12px;
+    }
+}

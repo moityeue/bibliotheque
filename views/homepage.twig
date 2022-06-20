@@ -1,0 +1,88 @@
+{% extends 'templateUser.twig' %}
+
+{% block documentTitle %}Bienvenue{% endblock %}
+
+{% block section1title %}<h1 class="page-title">nos nouveautés</h1>{% endblock %}
+
+{% block section1content %}
+
+<section class="listBooks-container row-limit-size-1400">
+    <div class="listBooks">
+
+        {% set booksLength = books|length %}
+
+        {% for i in 0..7 %}
+
+        <a class="link-book" href="/{{ base }}/livre/{{ books[i].getId_book() }}/{{ books[i].getTitle() }}">
+            <div class="book">
+                <h3 class="book-title">{{ books[i].getTitle() }}</h2>
+                <img class="book-img" src="/{{ base }}/views/templates/ressource/bookcover/{{ books[i].getCover }}" alt="Couverture du livre {{ book[i].getTitle }}">
+                {% set id_author = books[i].getID_author() %}
+                <p class="book-author">{{ authors[i].getName_author() }}</p>
+            </div>
+        </a>
+
+        {% endfor %}
+
+    </div>
+</section>
+
+{% endblock %}
+
+{% block section2title %}<h2 class="page-title">Nos livres</h2>{% endblock %}
+
+{% block section2content %}
+    {% set categoriesLength = categories|length %}
+    {% set languagesLength = languages|length %}
+
+
+<form action="#" method="GET" class="row-limit-size-1200" id="form-home">
+    <div class="flex-between search-container">
+        <input type="text" name="search" id="search-home" placeholder="Recherche par titre ou auteur">
+        <input type="submit" value="rechercher" id="submit-home">
+    </div>
+    <div class="row-limit-size-1200 select-container-home flex-between">
+        <select name="category" id="input-category" class="select-home" placeholder="">
+            <option value="" selected disabled hidden>Genre</option>
+            {% for i in 0..(categoriesLength - 1) %}
+            <option value="{{ categories[i].getId_category }}">{{ categories[i].getName_category() }}</option>
+            {% endfor %}
+        </select>
+        <select name="language" id="input-language" class="select-home" placeholder="">
+            <option value="" selected disabled hidden>Langue</option>
+            {% for i in 0..(languagesLength - 1) %}
+            <option value="{{ languages[i].getId_language() }}">{{ languages[i].getLanguage() }}</option>
+            {% endfor %}
+        </select>
+        <select name="century" id="input-century" class="select-home" placeholder="">
+            <option value="" selected disabled hidden>Siècle</option>
+            <option value="">18ème</option>
+            <option value="">19ème</option>
+            <option value="">20ème</option>
+            <option value="">21ème</option>
+        </select>
+    </div>
+</form>
+
+<section class="listBooks-container row-limit-size-1400">
+    <div class="listBooks">
+
+        {% set booksLength = books|length %}
+
+        {% for i in 0..(booksLength - 1) %}
+
+        <a class="link-book" href="/{{ base }}/livre/{{ books[i].getId_book() }}/{{ books[i].getTitle() }}">
+            <div class="book">
+                <h3 class="book-title">{{ books[i].getTitle() }}</h2>
+                <img class="book-img" src="/{{ base }}/views/templates/ressource/bookcover/{{ books[i].getCover }}" alt="Couverture du livre {{ book[i].getTitle }}">
+                {% set id_author = books[i].getID_author() %}
+                <p class="book-author">{{ authors[i].getName_author() }}</p>
+            </div>
+        </a>
+
+        {% endfor %}
+
+    </div>
+</section>
+
+{% endblock %}

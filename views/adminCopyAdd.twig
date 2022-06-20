@@ -1,0 +1,51 @@
+{% extends 'templateAdmin.twig' %}
+
+{% block documentTitle %}Exemplaire{% endblock %}
+
+{% block page %}Gestion des exemplaires{% endblock %}
+
+{% block content %}
+<section class="content">
+    <h2 class="content-title max-font-size min-font-size">Ajouter un exemplaire</h2>
+    <form action="#" method="POST" class="form-edit flex-start">
+      <label for="Exemplaire" class="label-edit">Exemplaire du livre</label>
+        <input type="number" min="0" name="id_copy" id="value" class="input-edit" >
+        <p class="label-edit">Livre : {{ base }}</p>
+        <label for="condition" class="label-edit">Etat de l'exemplaire</label>
+         <input type="text" min="0" name="condition" id="value" class="input-edit">
+            {# <option value="" selected disabled hidden>Choisir</option>
+            <option value="">Usé</option>
+            <option value="">Bon état</option>
+            <option value="">Mauvais état</option>
+            <option value="">Déchiré</option>
+            <option value="">A recycler</option>
+            <option value="">Très bon état</option>  #}
+        </select> 
+        <label for="language" class="label-edit">Langue de l'exemplaire</label>
+          <input type="number" name="id_language" id="value" class="input-edit"> 
+          
+              {# <option value="" selected disabled hidden>Choisir</option>
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+            <option value="">5</option>
+            <option value="">6</option> 
+        </select> #}
+        <input type="submit" name="submit"  class="input-edit" id="submit-edit">
+    </form> 
+    <div>
+        {# <h2 class="content-title max-font-size min-font-size">Liste des exemplaires existants</h2>
+        <table class="table"> #}
+             {# {% for i in 0..modifCount %}  #}
+            {# <tr class="table-row tr-d">
+                <td class="table-cells font-cells">Exemplaire n°1</td>
+                <td class="table-cells font-cells">Bon état</td>
+                <td class="table-cells"><a href="#"><img src="./views/templates/ressource/icon/denied.png" alt="Icone de suppression" class="icon-delete-copy"></a></td>
+            </tr> #}
+            {# {% endfor %}  #}
+        </table>
+    </div>
+</section>
+{% endblock %}
+ 

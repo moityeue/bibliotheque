@@ -1,0 +1,40 @@
+{% extends 'templateUser.twig' %}
+
+{% block documentTitle %}Suggestions de la semaine{% endblock %}
+
+{% block section1title %}<h1 class="page-title row-limit-size-1400 h1-suggestion">nos suggestions de lecture de la semaine</h1>{% endblock %}
+
+{% block section1content %}
+<section class="row-limit-size-1400">
+    <h2 class="suggestion-title">thème : blahblah</h2>
+    <p class="suggestion-para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus impedit id laboriosam est suscipit
+        reiciendis labore molestiae dolore earum saepe sunt vitae quas modi fugit placeat, dignissimos officiis
+        excepturi tempore ut eius nisi incidunt porro recusandae! Ratione sunt vel, minima, suscipit excepturi quibusdam
+        sequi possimus perferendis aut vero quae ab. Illum recusandae perspiciatis ipsum a est ipsam, maiores mollitia
+        reprehenderit aut excepturi molestias vero, quia iusto explicabo consequuntur dolorum esse aliquid cum
+        repellendus. Ipsum, quasi sunt similique quas reiciendis deserunt tenetur nisi, nostrum, omnis placeat repellat
+        provident. Tenetur, ex similique asperiores architecto tempore, quia excepturi praesentium iusto, quam ducimus
+        veritatis?
+    </p>
+</section>
+<section class="listBooks-container row-limit-size-1400">
+    <div class="listBooks">
+
+        {% set booksLength = books|length %}
+
+        {% for i in 0..7 %}
+
+        <a class="link-book" href="/{{ base }}/livre/{{ books[i].getId_book() }}/{{ books[i].getTitle() }}">
+            <div class="book">
+                <h3 class="book-title">{{ books[i].getTitle() }}</h2>
+                <img class="book-img" src="/{{ base }}/views/templates/ressource/bookcover/{{ books[i].getCover }}" alt="Couverture du livre {{ book[i].getTitle }}">
+                {% set id_author = books[i].getID_author() %}
+                <p class="book-author">{{ authors[i].getName_author() }}</p>
+            </div>
+        </a>
+
+        {% endfor %}
+
+    </div>
+</section>
+{% endblock %}
